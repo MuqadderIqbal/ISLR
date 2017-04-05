@@ -75,3 +75,27 @@ identify ( horsepower ,mpg , name)
 
 summary(Auto)
 summary(mpg)
+#---------------------------------------------------------------------
+#EXERCISES
+#---------------------------------------------------------------------
+#8:
+library(ISLR)
+College
+fix(College)
+summary(College)
+pairs(College[,1:10])
+
+attach(College)
+plot(Outstate,Private)
+
+Elite <- rep("No", nrow(College))
+Elite[College$Top10perc > 50] = "Yes"
+Elite = data.frame(Elite)
+summary(Elite)
+plot(Outstate, Elite$Elite)
+
+par(mfrow=c(2,2)) #divide the print window into four regions so that four
+                  #plots can be made simultaneously
+hist(PhD, col = 2, breaks = 15)
+hist(Enroll, col = 2, breaks = 15)
+hist(Accept, col = 2, breaks = 15)
